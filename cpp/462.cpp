@@ -3,14 +3,16 @@
 #include <algorithm>
 #include <map>
 
-using namespace std;
+using std::vector;
+using std::sort;
+using std::map;
 
 class Solution {
 public:
     int minMoves2(vector<int>& nums) {
-        s  int n = nums.size(), steps = 0;
+        int n = nums.size(), steps = 0;
         sort(nums.begin(), nums.end());
-        for(int i=0; i<n/2; i++){
+        for(int i=0; i < n/2; i++){
             steps += nums[n-1-i] - nums[i]; //Adding difference
         }
         return steps;
